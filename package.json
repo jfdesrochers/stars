@@ -1,6 +1,6 @@
 {
   "name": "stars",
-  "version": "18.5.7-1ae3130",
+  "version": "18.5.7-ba24546",
   "description": "Software for Travel data Analysis, Reporting and Storage",
   "main": "server.js",
   "scripts": {
