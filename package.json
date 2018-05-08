@@ -1,0 +1,42 @@
+{
+  "name": "stars",
+  "version": "18.5.7-1ae3130",
+  "description": "Software for Travel data Analysis, Reporting and Storage",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "npm run build && git add -A",
+    "commit": "npm version `date +%-y.%-m.%-d`-`git log --pretty=format:'%h' -n 1`",
+    "dev": "npm run start:client | npm run start:server",
+    "build": "NODE_ENV=production webpack --progress --mode production",
+    "start:client": "webpack-dev-server --inline --hot --progress --mode development",
+    "start:server": "nodemon -w ./server -w ./server.js server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfdesrochers/stars.git"
+  },
+  "author": "Jean-Francois Desrochers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jfdesrochers/stars/issues"
+  },
+  "homepage": "https://github.com/jfdesrochers/stars",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "nodemon": "^1.17.1",
+    "webpack": "^4.1.0",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mithril": "^1.1.6",
+    "papaparse": "^4.4.0",
+    "serve-favicon": "^2.5.0"
+  }
+}
