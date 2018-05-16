@@ -21,7 +21,12 @@ function setLoading (isLoading, ldMessage) {
 const StarsApp = {}
 
 StarsApp.oninit = function () {
-
+    const self = this
+    self.toggleTraining = (enabled) => {
+        self.trainingMode = enabled
+        self.trainingMode ? document.body.classList.add('training') : document.body.classList.remove('training')
+    }
+    self.toggleTraining(false)
 }
 
 StarsApp.oncreate = function () {
@@ -29,7 +34,8 @@ StarsApp.oncreate = function () {
 }
 
 StarsApp.view = function () {
-    return m(MainWindow)
+    const self = this
+    return m(MainWindow, {training: self.trainingMode, location: 'Main Menu', maximized: false})
 }
 
 m.mount(document.getElementById('contents'), StarsApp)
